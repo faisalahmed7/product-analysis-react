@@ -1,4 +1,7 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+
+import { faStar } from '@fortawesome/free-solid-svg-icons'
 
 const ReviewDetails = ({review}) => {
     
@@ -11,7 +14,12 @@ const ReviewDetails = ({review}) => {
             <div>
             <h5 className='text-xl font-mono text-center mt-5 mb-3'> {name}</h5>
             <p className='text-left font-serif'>{description}</p>
-            <p>Ratings: {ratings}</p>
+            <p>{ratings}: <FontAwesomeIcon icon={faStar}></FontAwesomeIcon> <FontAwesomeIcon icon={faStar}>
+                </FontAwesomeIcon> <FontAwesomeIcon icon={faStar}>
+                </FontAwesomeIcon> <FontAwesomeIcon icon={faStar}></FontAwesomeIcon> <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                 </p>
+            
+
             </div>
             
         </div>

@@ -1,0 +1,38 @@
+@media only screen and (max-width: 576px) {
+    .charts-container {
+
+        width: auto;
+        margin: 0px;
+        padding: 0px;
+       
+    }
+
+    .composed-chart {
+        text-align: center;
+        width: 50%;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .biaxial-chart {
+        text-align: center;
+        width: 50%;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .stacked-chart {
+        text-align: center;
+        width: 50%;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .straight-chart {
+        text-align: center;
+        width: 50%;
+        margin: 0px;
+        padding: 0px;
+
+    }
+}

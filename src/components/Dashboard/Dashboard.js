@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Area, AreaChart, Bar, BarChart, CartesianGrid, ComposedChart, Legend, Line, Pie, PieChart, Tooltip, XAxis, YAxis } from 'recharts';
+import './Dashboard.css'
 
 
 const Dashboard = () => {
@@ -13,11 +14,12 @@ fetch('data.json')
 
     },[])
     return (
-        <div className='grid md:grid-cols-2 ml-24 mt-16 mb-20 '>
+        <div className='charts-container grid md:grid-cols-2 md:ml-24 md:mt-16 md:mb-20 items-center '>
 
 {/* Chart Type:ComposedChartWithAxisLabels */}
-            <div className='mb-16 ml-16'>
-            <ComposedChart
+            <div className='composed-chart mb-16 md:ml-16'>
+            
+            <ComposedChart className='chart-1'
           width={500}
           height={400}
           data={data}
@@ -36,15 +38,18 @@ fetch('data.json')
           <Bar dataKey="revenue" barSize={20} fill="#413ea0" />
           <Line type="monotone" dataKey="revenue" stroke="#ff7300" />
         </ComposedChart>
-
-        <h4 className='ml-16 font-serif'><span className='text-xl text-bold font-mono bg-green-200 rounded-md border-0 p-1'>ComposedChartWithAxisLabels:</span> Monthly Revenue</h4>
+        <h4 className='ml-16 mb-10 text-center font-serif'><span className='md:text-xl text-bold font-mono bg-green-200 rounded-md border-0 p-1'>
+              ComposedChartWithAxisLabels:</span>
+             Monthly Revenue</h4>
+        
             </div>
 
 
 {/* Chart Type:BiaxialBarChart */}
             
-            <div>
-            <BarChart
+            <div className='biaxial-chart '>
+            
+            <BarChart className='chart-2'
           width={500}
           height={300}
           data={data}
@@ -64,13 +69,16 @@ fetch('data.json')
           <Bar yAxisId="left" dataKey="investment" fill="#8884d8" />
           <Bar yAxisId="right" dataKey="revenue" fill="#82ca9d" />
         </BarChart>
-        <h4 className='ml-16 mt-20 font-serif'><span className='text-xl text-bold font-mono bg-green-200 rounded-md border-0 p-1'>ComposedChartWithAxisLabels:</span> Monthly Revenue with Investment</h4>
+        <h4 className='md:ml-16 mt-10 text-center mb-20 font-serif'><span className='md:text-xl text-bold font-mono bg-green-200 rounded-md border-0 p-1'>
+              ComposedChartWithAxisLabels:</span>
+         Monthly Revenue with Investment</h4>
             </div>
 
 
             {/* Chart Type:StackedAreaChart */}
-            <div className='ml-16'>
-            <AreaChart
+            <div className='stacked-chart md:ml-16 '>
+            
+            <AreaChart 
           width={500}
           height={400}
           data={data}
@@ -89,18 +97,19 @@ fetch('data.json')
           <Area type="monotone" dataKey="investment" stackId="1" stroke="#82ca9d" fill="#82ca9d" />
           <Area type="monotone" dataKey="revenue" stackId="1" stroke="#ffc658" fill="#ffc658" />
         </AreaChart>
-
-        <h4 className='ml-16 mt-8 font-serif'><span className='text-xl text-bold font-mono bg-green-200 rounded-md border-0 p-1'>StackedAreaChart:</span>  
-        Month wise Sell,Revenue and Investment</h4>
+        <h4 className='md:ml-16 mt-8 text-center mb-10 font-serif'><span className='md:text-xl text-bold font-mono bg-green-200 rounded-md border-0 p-1'>
+              StackedAreaChart:</span> 
+            Month wise Sell,Revenue and Investment</h4>
             </div>
 
 
 
             {/* Chart Type:StraightAnglePieChart */}
-            <div>
+            <div className='straight-chart '>
+            
             <PieChart width={400} height={400}>
           <Pie
-            dataKey="revenue"
+            dataKey="investment"
             startAngle={180}
             endAngle={0}
             data={data}
@@ -112,8 +121,9 @@ fetch('data.json')
           />
           <Tooltip></Tooltip>
         </PieChart>
-        <h4 className='ml-16 font-serif'><span className='text-xl text-bold font-mono bg-green-200 rounded-md border-0 p-1'>StraightAnglePieChart:</span> 
-         Month wise Sell,Revenue and Investment</h4>
+        <h4 className='md:ml-16 mt-2 text-center font-serif'><span className='md:text-xl text-bold font-mono bg-green-200 rounded-md border-0 p-1'>
+              StraightAnglePieChart:</span> 
+         Month Revenue </h4>
             </div>
             
         </div>
