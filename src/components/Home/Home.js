@@ -11,7 +11,7 @@ const Home = () => {
     const review=newReviews.slice(0,3)
 
     return (
-        <div>
+        <div className='mb-20'>
             <div className='flex justify-between mt-16 mb-20'>
                 <div className="product-details ml-20 w-1/2">
                     <h3 className='text-5xl color text-gray-500 font-bold'>Gravity Laptop</h3>
