@@ -17,7 +17,8 @@ const Blogs = () => {
                 <p className=''>Semantic Tag or HTML  are those tag or HTML that refers to the tags which provide a meaning to an HTML webpage rather than just a normal presentation.
                     Normal HTML was created  to describe the documents in the early stage of internet.
                     But semantic tags make HTML more feasible and comprehensible to use, to understand etc.
-                    Mainly it clears a good communication by it's meaning to both the developers and the browsers.List of semantic tags. </p>
+                    Mainly it clears a good communication by it's meaning to both the developers and the browsers.
+                    Some of them are header, nav, article, section, aside, footer,main etc. </p>
             </div>
 
         </div>
