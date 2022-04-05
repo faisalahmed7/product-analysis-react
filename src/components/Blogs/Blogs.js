@@ -14,7 +14,8 @@ const Blogs = () => {
 
             <div className='border rounded-lg bg-slate-200 px-3 py-6 mx-auto w-1/2  text-justify'>
                 <h3 className='text-center text-3xl font-bold mb-6'>What is Semantic Tags</h3>
-                <p className=''>Semantic Tag or HTML  are those tag or HTML that refers to the tags which provide a meaning to an HTML webpage rather than just a normal presentation.
+                <p className=''>Semantic Tag or HTML  are those tag or HTML that refers to the tags which
+                    provide a meaning to an HTML webpage rather than just a normal presentation.
                     Normal HTML was created  to describe the documents in the early stage of internet.
                     But semantic tags make HTML more feasible and comprehensible to use, to understand etc.
                     Mainly it clears a good communication by it's meaning to both the developers and the browsers.

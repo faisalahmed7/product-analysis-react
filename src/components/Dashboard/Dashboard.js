@@ -5,21 +5,21 @@ import './Dashboard.css'
 
 const Dashboard = () => {
 
-    const [data,setData]=useState([])
-    useEffect(()=>{
-fetch('data.json')
-.then(res=>res.json())
-.then(data=>setData(data))
+  const [data, setData] = useState([])
+  useEffect(() => {
+    fetch('data.json')
+      .then(res => res.json())
+      .then(data => setData(data))
 
 
-    },[])
-    return (
-        <div className='charts-container grid md:grid-cols-2 md:ml-24 md:mt-16 md:mb-20 items-center '>
+  }, [])
+  return (
+    <div className='charts-container grid md:grid-cols-2 md:ml-24 md:mt-16 md:mb-20 items-center '>
 
-{/* Chart Type:ComposedChartWithAxisLabels */}
-            <div className='composed-chart mb-16 md:ml-16'>
-            
-            <ComposedChart className='chart-1'
+      {/* Chart Type:ComposedChartWithAxisLabels */}
+      <div className='composed-chart mb-16 md:ml-16'>
+
+        <ComposedChart
           width={500}
           height={400}
           data={data}
@@ -39,17 +39,17 @@ fetch('data.json')
           <Line type="monotone" dataKey="revenue" stroke="#ff7300" />
         </ComposedChart>
         <h4 className='ml-16 mb-10 text-center font-serif'><span className='md:text-xl text-bold font-mono bg-green-200 rounded-md border-0 p-1'>
-              ComposedChartWithAxisLabels:</span>
-             Monthly Revenue</h4>
-        
-            </div>
+          ComposedChartWithAxisLabels:</span>
+          Monthly Revenue</h4>
+
+      </div>
 
 
-{/* Chart Type:BiaxialBarChart */}
-            
-            <div className='biaxial-chart '>
-            
-            <BarChart className='chart-2'
+      {/* Chart Type:BiaxialBarChart */}
+
+      <div className='biaxial-chart '>
+
+        <BarChart
           width={500}
           height={300}
           data={data}
@@ -70,15 +70,15 @@ fetch('data.json')
           <Bar yAxisId="right" dataKey="revenue" fill="#82ca9d" />
         </BarChart>
         <h4 className='md:ml-16 mt-10 text-center mb-20 font-serif'><span className='md:text-xl text-bold font-mono bg-green-200 rounded-md border-0 p-1'>
-              ComposedChartWithAxisLabels:</span>
-         Monthly Revenue with Investment</h4>
-            </div>
+          ComposedChartWithAxisLabels:</span>
+          Monthly Revenue with Investment</h4>
+      </div>
 
 
-            {/* Chart Type:StackedAreaChart */}
-            <div className='stacked-chart md:ml-16 '>
-            
-            <AreaChart 
+      {/* Chart Type:StackedAreaChart */}
+      <div className='stacked-chart md:ml-16 '>
+
+        <AreaChart
           width={500}
           height={400}
           data={data}
@@ -98,16 +98,16 @@ fetch('data.json')
           <Area type="monotone" dataKey="revenue" stackId="1" stroke="#ffc658" fill="#ffc658" />
         </AreaChart>
         <h4 className='md:ml-16 mt-8 text-center mb-10 font-serif'><span className='md:text-xl text-bold font-mono bg-green-200 rounded-md border-0 p-1'>
-              StackedAreaChart:</span> 
-            Month wise Sell,Revenue and Investment</h4>
-            </div>
+          StackedAreaChart:</span>
+          Month wise Sell,Revenue and Investment</h4>
+      </div>
 
 
 
-            {/* Chart Type:StraightAnglePieChart */}
-            <div className='straight-chart '>
-            
-            <PieChart width={400} height={400}>
+      {/* Chart Type:StraightAnglePieChart */}
+      <div className='straight-chart '>
+
+        <PieChart width={400} height={400}>
           <Pie
             dataKey="investment"
             startAngle={180}
@@ -122,12 +122,12 @@ fetch('data.json')
           <Tooltip></Tooltip>
         </PieChart>
         <h4 className='md:ml-16 mt-2 text-center font-serif'><span className='md:text-xl text-bold font-mono bg-green-200 rounded-md border-0 p-1'>
-              StraightAnglePieChart:</span> 
-         Month Revenue </h4>
-            </div>
-            
-        </div>
-    );
+          StraightAnglePieChart:</span>
+          Month Revenue </h4>
+      </div>
+
+    </div>
+  );
 };
 
 export default Dashboard;

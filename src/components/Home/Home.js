@@ -6,13 +6,16 @@ import ReviewDetails from '../ReviewDetails/ReviewDetails'
 import './Home.css'
 
 const Home = () => {
-
+// review Data Load with custom hook
     const [reviews] = useReviews()
-    const newReviews=[...reviews]
-    const review=newReviews.slice(0,3)
+    const newReviews = [...reviews]
+    const review = newReviews.slice(0, 3)
 
     return (
         <div className='mb-20'>
+
+            {/* Product Details */}
+
             <div className='details-container flex flex-col justify-between mt-16 mb-20 md:flex-row'>
                 <div className="product-details ml-20 w-1/2 ">
                     <h3 className='text-5xl color md:ml-20 text-gray-500 font-bold'>Gravity Laptop</h3>
@@ -36,19 +39,19 @@ const Home = () => {
                 </div>
             </div>
 
-
+            {/* Review section */}
             <div>
                 <h2 className='text-center text-5xl text-black p-3 mt-10 font-serif'>Reviews</h2>
 
                 <div className='mt-10 md:ml-60 p-3 mx-5 grid md:grid-cols-3 bg-white gap-6'>
-                {
-                     review.map(review=> <ReviewDetails key={review.id} review={review} ></ReviewDetails> )
-                 }
+                    {
+                        review.map(review => <ReviewDetails key={review.id} review={review} ></ReviewDetails>)
+                    }
                 </div>
 
                 <div className='mt-10 mb-20 text-center'>
-            <Link to='/reviews' className='text-xl mt-5 border-0 rounded-lg bg-blue-400 p-3 mx-auto font-serif'>See All Reviews</Link>
-            </div>
+                    <Link to='/reviews' className='text-xl mt-5 border-0 rounded-lg bg-blue-400 p-3 mx-auto font-serif'>See All Reviews</Link>
+                </div>
             </div>
 
 
