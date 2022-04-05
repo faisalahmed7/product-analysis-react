@@ -5,6 +5,7 @@ import './Dashboard.css'
 
 const Dashboard = () => {
 
+// fetch chart data
   const [data, setData] = useState([])
   useEffect(() => {
     fetch('data.json')
@@ -14,6 +15,7 @@ const Dashboard = () => {
 
   }, [])
   return (
+    
     <div className='charts-container grid md:grid-cols-2 md:ml-24 md:mt-16 md:mb-20 items-center '>
 
       {/* Chart Type:ComposedChartWithAxisLabels */}
